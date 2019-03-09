@@ -3,13 +3,10 @@
 
 <head>
   <title>Project Title</title>
-  <!-- for handheld devices -->
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
   <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
-  <!-- for types of different fonts -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <!--Using javascript as a menu container -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/menu.js"></script>
   <!--
@@ -25,26 +22,40 @@
 
 <body>
     <div class="menu-container"></div>
-    <!--
-    <div class="menu-container">
-      <div class="menu">
-        <div class="menu-table flex-row-space-between">
-          <div class="logo flex-row-center">
-            <a href="index.html">Project Title</a>
-         </div>
-         <a class="menu-button" tabindex="0" href="javascript:void(0)">
-           <img src="img/menu.png">
-         </a>
-         <div class="menu-items flex-row-center flex-item">
-            <a href="index.html" class="menu-index">Overview</a>
-            <a href="widgets.html" class="menu-widget">Widgets</a>
-            <a href="embedding.html" class="menu-embedding">Embedding</a>
-            <a href="https://github.com/yenchiah/project-website-template">GitHub</a>
+    <!-- change forms in css file-->
+    <div class="content-container">
+      <div class="content">
+        <div class="content-table flex-column">
+          <div class="flex-row">
+            <div class="flex-item flex-column">
+              <img class="image" src="img/car1_2.jpg">
+            </div>
+            <div class="flex-item flex-column">
+              <p class="text text-large">
+                <!--<a target="_blank" href="javascript:void(0)">Answer 1</a>-->
+                Answer 1: ...<br>
+                Answer 2: ...<br>
+              </p>
+            </div>
+          </div>
+          <div class="flex-row">
+            <div class="flex-item flex-column">
+              <h2 class="add-top-margin">Answers</h2>
+              <hr>
+              <div class="control-group">
+                <button class="custom-button">[Car 1] is ...</button>
+                <button class="custom-button custom-button-primary">There is ...</button>
+                <button class="custom-button custom-button-info">In front - [Car2]</button>
+                <button class="custom-button custom-button-info">"Test"</button>
+              </div>
+              <div class="control-group">
+                <button class="custom-button-flat"><img src="img/next.png"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    -->
     <h1>Hello github</h1>
     <p>Done</p>
     <button>press</button>
