@@ -31,8 +31,9 @@ function setImage(select){
     image.src = img_src;
 }
 $(document).ready(function(){
-  $("button#A5").click(function(){
-    $("#p1").show("Probability:");
+  $(".p1").hide();
+  $(".A5").click(function(){
+    $(".p1").show();
   });
 });
 </script>
@@ -56,7 +57,7 @@ $(document).ready(function(){
               <button class="custom-button" id="A3">[car 0] will go forward.</button>
               <button class="custom-button" id="A4">[car 2] will pass [car 1].</button>
               <button class="custom-button-flat" id="A5"><img src="img/next.png"><span>See Results</span></button>
-              <p id="p1">Unknown</p>
+              <p id="p1">Unknown results</p>
               <hr>
               <h2 class="add-top-margin">Reason choices</h2>
               <button class="custom-button">[car 1] is far ahead from [car 0].</button>

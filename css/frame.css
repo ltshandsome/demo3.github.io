@@ -291,7 +291,7 @@ hr {
 
 .image img,
 .image video {
-  width: 100%;
+  width: auto;
   height: auto;
   box-sizing: border-box;
   display: table-cell;
