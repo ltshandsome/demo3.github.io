@@ -20,7 +20,22 @@
   </style>
   -->
 </head>
-
+<script type="text/javascript">
+function setImage(select){
+    <!--
+    <img id="AvatarImage" name="#target" src="./result/4_8/0.5.png" style="border: 6px solid transparent;widht:200px;height:200px ;margin-left:auto;margin-right: auto;"/>
+    -->
+    <!--document.getElementById('')-->
+    var img_src = document.getElementsByName("#target")[0];
+    
+    image.src = img_src;
+}
+$(document).ready(function(){
+  $("button#A5").click(function(){
+    $("#p1").show("Probability:");
+  });
+});
+</script>
 <body>
     <div class="menu-container"></div>
     <!-- change forms in css file-->
@@ -29,14 +44,25 @@
         <div class="content-table flex-column">
           <div class="flex-row">
             <div class="flex-item flex-column">
-              <img class="image" src="img/car1_2.jpg">
+              <img class="image" src="img/car1_2.jpg" width="400" height="300">
             </div>
             <div class="flex-item flex-column">
-              <p class="text text-large">
-                <!--<a target="_blank" href="javascript:void(0)">Answer 1</a>-->
-                Answer 1: ...<br>
-                Answer 2: ...<br>
-              </p>
+              <h2 class="add-top-margin">Question: What will happen next in this picture?</h2>
+              <hr>
+              <h2 class="add-top-margin">Answer choices</h2>
+              <!-- script, option? -->
+              <button class="custom-button" id="A1">[car 2] will change the lane.</button>
+              <button class="custom-button" id="A2">[car 3] will slow down.</button>
+              <button class="custom-button" id="A3">[car 0] will go forward.</button>
+              <button class="custom-button" id="A4">[car 2] will pass [car 1].</button>
+              <button class="custom-button-flat" id="A5"><img src="img/next.png"><span>See Results</span></button>
+              <p id="p1">Unknown</p>
+              <hr>
+              <h2 class="add-top-margin">Reason choices</h2>
+              <button class="custom-button">[car 1] is far ahead from [car 0].</button>
+              <button class="custom-button">[car 2] goes too fast.</button>
+              <button class="custom-button">[car 0] is on the left lane.</button>
+              <button class="custom-button">[car 3] is crossing the line.</button>
             </div>
             <div class="flex-item flex-column">
               Probabilities: ...<br>
