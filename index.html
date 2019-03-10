@@ -31,9 +31,8 @@ function setImage(select){
     image.src = img_src;
 }
 $(document).ready(function(){
-  $(".p1").hide();
-  $(".A5").click(function(){
-    $(".p1").show();
+  $("button#A5").click(function(){
+    $("p").hide();
   });
 });
 </script>
@@ -45,10 +44,10 @@ $(document).ready(function(){
         <div class="content-table flex-column">
           <div class="flex-row">
             <div class="flex-item flex-column">
-              <img class="image" src="img/car1_2.jpg" width="400" height="300">
+              <img class="image" src="img/car1_2.jpg" style="width:400px;height:300px">
             </div>
             <div class="flex-item flex-column">
-              <h2 class="add-top-margin">Question: What will happen next in this picture?</h2>
+              <h2 class="add-top-margin">What will happen next?</h2>
               <hr>
               <h2 class="add-top-margin">Answer choices</h2>
               <!-- script, option? -->
@@ -57,7 +56,7 @@ $(document).ready(function(){
               <button class="custom-button" id="A3">[car 0] will go forward.</button>
               <button class="custom-button" id="A4">[car 2] will pass [car 1].</button>
               <button class="custom-button-flat" id="A5"><img src="img/next.png"><span>See Results</span></button>
-              <p id="p1">Unknown results</p>
+              <p>Unknown results</p>
               <hr>
               <h2 class="add-top-margin">Reason choices</h2>
               <button class="custom-button">[car 1] is far ahead from [car 0].</button>
