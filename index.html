@@ -85,6 +85,27 @@ function setImage(select){
 }
 </script>
 -->
+<script type="text/javascript">
+var dir = "img";
+function magnification(a){
+	var ratio_src = document.querySelector('#range');
+	var result = document.getElementsByName("#result")[0];
+	var x = ratio_src.value;
+	var x = parseInt(x);
+
+	switch(x){
+    	case 0:
+    	var result_src = dir+"0.5.png";
+    	break;
+    	case 1:
+    	var result_src = dir+"0.7.png";
+    	break;
+    	case 2:
+    	var result_src = dir+"0.9.png";
+    	break;
+
+
+</script>
 <!--
 <script>
 $(document).ready(function(){
