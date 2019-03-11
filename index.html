@@ -10,6 +10,9 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/menu.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <!--
   <style>
     .menu-index {
@@ -20,22 +23,28 @@
   </style>
   -->
 </head>
+<!--
 <script type="text/javascript">
 function setImage(select){
-    <!--
     <img id="AvatarImage" name="#target" src="./result/4_8/0.5.png" style="border: 6px solid transparent;widht:200px;height:200px ;margin-left:auto;margin-right: auto;"/>
-    -->
-    <!--document.getElementById('')-->
     var img_src = document.getElementsByName("#target")[0];
     
     image.src = img_src;
 }
+</script>
+-->
+<!--
+<script>
 $(document).ready(function(){
-  $("button#A5").click(function(){
+  $("#A5").click(function(){
     $("p").hide();
+  });
+  $("#A4").click(function(){
+    $("p").show();
   });
 });
 </script>
+-->
 <body>
     <div class="menu-container"></div>
     <!-- change forms in css file-->
@@ -44,19 +53,18 @@ $(document).ready(function(){
         <div class="content-table flex-column">
           <div class="flex-row">
             <div class="flex-item flex-column">
-              <img class="image" src="img/car1_2.jpg" style="width:400px;height:300px">
+              <img class="image" src="img/car1_2.jpg" style="width:600px;height:450px">
             </div>
             <div class="flex-item flex-column">
               <h2 class="add-top-margin">What will happen next?</h2>
               <hr>
               <h2 class="add-top-margin">Answer choices</h2>
               <!-- script, option? -->
-              <button class="custom-button" id="A1">[car 2] will change the lane.</button>
-              <button class="custom-button" id="A2">[car 3] will slow down.</button>
-              <button class="custom-button" id="A3">[car 0] will go forward.</button>
-              <button class="custom-button" id="A4">[car 2] will pass [car 1].</button>
+              <button class="custom-button" id="A1">(a)[car 2] will change the lane.</button>
+              <button class="custom-button" id="A2">(b)[car 3] will slow down.</button>
+              <button class="custom-button" id="A3">(c)[car 0] will go forward.</button>
+              <button class="custom-button" id="A4">(d)[car 2] will pass [car 1].</button>
               <button class="custom-button-flat" id="A5"><img src="img/next.png"><span>See Results</span></button>
-              <p>Unknown results</p>
               <hr>
               <h2 class="add-top-margin">Reason choices</h2>
               <button class="custom-button">[car 1] is far ahead from [car 0].</button>
@@ -65,31 +73,13 @@ $(document).ready(function(){
               <button class="custom-button">[car 3] is crossing the line.</button>
             </div>
             <div class="flex-item flex-column">
-              Probabilities: ...<br>
-              Probabilities: ...<br>
-              Probabilities: ...<br>
+              <div class="highchart-container"></div>
             </div>
           </div>
           <div class="flex-row">
-            <div class="flex-item flex-column">
-              <h2 class="add-top-margin">Answers</h2>
-              <hr>
-              <div class="control-group">
-                <button class="custom-button">[Car 1] is ...</button>
-                <button class="custom-button custom-button-primary">There is ...</button>
-                <button class="custom-button custom-button-info">In front - [Car2]</button>
-                <button class="custom-button custom-button-info">"Test"</button>
-              </div>
-              <div class="control-group">
-                <button class="custom-button-flat"><img src="img/next.png"><span>Next</span></button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    <h1>Hello github</h1>
-    <p>Done</p>
-    <button>press</button>
 </body>
 </html>

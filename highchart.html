@@ -1,0 +1,65 @@
+<div id="container" style="min-width: 450px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Probability of answer predictions'
+    },
+    /*
+    subtitle: {
+        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
+    },*/
+    xAxis: {
+        categories: ['(a)', '(b)', '(c)', '(d)'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Probability',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        //valueSuffix: 'millions'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -10,
+        y: 30,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'TimeSeq1',
+        data: [0.107, 0.31, 0.335, 0.203]
+    }, {
+        name: 'TimeSeq2',
+        data: [0.133, 0.156, 0.347, 0.408]
+    }, {
+        name: 'TimeSeq3',
+        data: [0.214, 0.2841, 0.3714, 0.327]
+    }]
+});
+</script>
