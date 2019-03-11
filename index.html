@@ -13,15 +13,67 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
   <style>
     .menu-index {
       color: rgb(255, 255, 255) !important;
       opacity: 1;
       font-weight: 700;
     }
+    .theme-construction {
+  	--radius: 0;
+  	--baseFg: white;
+  	--baseBg: black;
+ 	--accentFg: black;
+  	--accentBg: orange;
+    }
+    .slider {
+    -webkit-appearance: none;
+    width: 95%;
+    height: 15px;
+    border-radius: 5px;   
+    border: 6px solid transparent;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    }
+    .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+	}
+    select {
+  	font: 400 12px/1.3 sans-serif;
+  	-webkit-appearance: none;
+  	appearance: none;
+  	color: var(--baseFg);
+  	border: 1px solid var(--baseFg);
+  	line-height: 1;
+  	outline: 0;
+  	padding: 0.65em 2.5em 0.55em 0.75em;
+  	border-radius: var(--radius);
+  	background-color: var(--baseBg);
+  	background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+  	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  	background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+  	background-position: right 20px center, right bottom, right bottom, right bottom;   
+	}
+    table,td,tr {
+      border: 1px solid transparent;
+      background-color: rgba(0, 0, 0, 0);
+      background: none;
+    }
   </style>
-  -->
+  
 </head>
 <!--
 <script type="text/javascript">
@@ -60,24 +112,52 @@ $(document).ready(function(){
               <hr>
               <h2 class="add-top-margin">Answer choices</h2>
               <!-- script, option? -->
-              <button class="custom-button" id="A1">(a)[car 2] will change the lane.</button>
-              <button class="custom-button" id="A2">(b)[car 3] will slow down.</button>
-              <button class="custom-button" id="A3">(c)[car 0] will go forward.</button>
-              <button class="custom-button" id="A4">(d)[car 2] will pass [car 1].</button>
+              <div class="list-group">
+                <a href="#" class="list-group-item"><h3>(a) [car 2] will change the lane.</h3></a>
+		        <a href="#" class="list-group-item"><h3>(b) [car 3] will slow down.</h3></a>
+		        <a href="#" class="list-group-item active"><h3>(c) [car 0] will go forward.</h3></a>
+		        <a href="#" class="list-group-item"><h3>(d) [car 2] will pass [car 1].</h3></a>
+		      </div>
               <button class="custom-button-flat" id="A5"><img src="img/next.png"><span>See Results</span></button>
               <hr>
-              <h2 class="add-top-margin">Reason choices</h2>
-              <button class="custom-button">[car 1] is far ahead from [car 0].</button>
-              <button class="custom-button">[car 2] goes too fast.</button>
-              <button class="custom-button">[car 0] is on the left lane.</button>
-              <button class="custom-button">[car 3] is crossing the line.</button>
+              
             </div>
             <div class="flex-item flex-column">
               <div class="highchart-container"></div>
             </div>
           </div>
           <div class="flex-row">
+            <div class="flex-item flex-column">
+	          <h2 class="add-top-margin">Reason choices</h2>
+              <button class="custom-button">(1)[car 1] is far ahead from [car 0].</button>
+              <button class="custom-button">(2)[car 2] goes too fast.</button>
+              <button class="custom-button">(3)[car 0] is on the left lane.</button>
+              <button class="custom-button">(4)[car 3] is crossing the line.</button>
+            </div>
           </div>
+          <section id="one" class="wrapper style2">
+	  <div class="content">
+	    <table>
+	    <tr>
+	    <td align="center" colspan="3">
+		<div style="width:200px;">
+		<select class="theme-construction" onChange="setImage(this.options[this.selectedIndex].value);">
+		  <option style="color:white" value="0">image 1</option>
+		  <option style="color:white" value="1">image 2</option>
+		  <option style="color:white" value="2">image 3</option>
+		</select>
+		</div>
+	    </td>
+	    </tr>
+            <tr align="center">
+		<td align="right"><p><font color="#bfbfbf">TimeSeq</font></p></td>
+		<td align="center">
+		  <input type="range" id="range" name="range" min="0" max="2" class="slider" value="1" oninput='magnification(1)'>
+		</td>
+	    </tr>
+	    </table>
+          </div>
+	  </section>
         </div>
       </div>
     </div>
